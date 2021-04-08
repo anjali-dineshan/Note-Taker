@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="addnote-body">
+        <h1>Note Taker</h1>
+        <h3>Add A New Note:</h3>
+        <form action="" onsubmit="return false">
+            <label for="note">Note:</label>
+            <textarea name="note" id="note" cols="110" rows="5"></textarea>
+            <input type="submit" value="Add Note" id="add-note" onclick="addNote()">
+        </form>
+    </div>
+    <div id="notes-body"></div>
+    <div id="popup-div"></div>
+    <script src="script.js"></script>
+</body>
+</html>
