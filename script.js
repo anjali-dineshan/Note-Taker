@@ -3,21 +3,28 @@ function addNote()
 {
     let note=document.getElementById("note").value; //input value
     let divId=document.getElementById("notes-body"); //Parent Div
-
    let div=document.createElement("div");
    if(note.length>=180)  // content length morethan 180(more than 2 line)
    {
     let substr=note.substring(0,180); 
     let substr1=note.substr(180);
-    div.innerHTML=`<p>
+    div.innerHTML=`
+    <div class="card" style="width: 18rem;"> 
+    <div class="card-body">
+    <p class"card-text">     
                         <span>Note</span>
                         <span>${count}</span>
                     </p>
-                    <p class="text-note" id="NoteP">
+                    <p class="text-note card-text" id="NoteP">
                         <span>${substr}...</span>
                         <span class="hidden-str">${substr1}</span>
                     </p>
-                    <a class="detail-button" onclick="popup(this.parentElement)">View Detail</a>`;
+                    <a class="detail-button" onclick="popup(this.parentElement)">View Detail</a>
+                    </div>
+                    </div>`;
+   }
+   if (note == "" || note.length ==0) {
+      return  alert("enter value before submit") 
    }
    else
    {
@@ -30,6 +37,7 @@ function addNote()
    }
     divId.append(div);
     count++;
+    document.getElementById("note").value=""; 
  
 }
 //pop up function for long input content
