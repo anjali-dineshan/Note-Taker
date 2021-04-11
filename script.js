@@ -6,12 +6,12 @@ function addNote()
    let div=document.createElement("div");
    if(note.length>=180)  // content length morethan 180(more than 2 line)
    {
+       console.log("entering");
     let substr=note.substring(0,180); 
     let substr1=note.substr(180);
     div.innerHTML=`
-    <div class="card" style="width: 18rem;"> 
-    <div class="card-body">
-    <p class"card-text">     
+    
+    <p class="card-text">     
                         <span>Note</span>
                         <span>${count}</span>
                     </p>
@@ -20,10 +20,9 @@ function addNote()
                         <span class="hidden-str">${substr1}</span>
                     </p>
                     <a class="detail-button" onclick="popup(this.parentElement)">View Detail</a>
-                    </div>
-                    </div>`;
+                    `;
    }
-   if (note == "" || note.length ==0) {
+   else if (note == "" || note.length ==0) {
       return  alert("enter value before submit") 
    }
    else
