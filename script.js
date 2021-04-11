@@ -5,6 +5,10 @@ function addNote()
     let divId=document.getElementById("notes-body"); //Parent Div
 
    let div=document.createElement("div");
+   if(note=="")
+   {
+       return alert("Must enter a note")
+   }
    if(note.length>=180)  // content length morethan 180(more than 2 line)
    {
     let substr=note.substring(0,180); 
@@ -30,7 +34,8 @@ function addNote()
    }
     divId.append(div);
     count++;
- 
+    document.getElementById("note").value=""; //making input field empty after submit
+    
 }
 //pop up function for long input content
 function popup(parentDiv)
