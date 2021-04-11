@@ -77,7 +77,8 @@ function popup1(parentDiv)
 //close btn
 function closeFun()
 {
-    document.getElementById("popup-div").classList.toggle("hide"); 
+    document.getElementById("popup-div").classList.toggle("hide");
+     
 }
 
 
